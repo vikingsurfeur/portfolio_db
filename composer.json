@@ -1,4 +1,6 @@
 {
+    "name": "portfolio_db package",
+    "description": "composer.json package for portfolio_db",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
