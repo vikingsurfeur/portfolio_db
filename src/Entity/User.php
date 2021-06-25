@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -65,6 +67,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $instagram;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Photograph::class, mappedBy="user", orphanRemoval=true)
+     */
+    private $photographs;
+
+    public function __construct()
+    {
+        $this->photographs = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -223,6 +235,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setInstagram(?string $instagram): self
     {
         $this->instagram = $instagram;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Photograph[]
+     */
+    public function getPhotographs(): Collection
+    {
+        return $this->photographs;
+    }
+
+    public function addPhotograph(Photograph $photograph): self
+    {
+        if (!$this->photographs->contains($photograph)) {
+            $this->photographs[] = $photograph;
+            $photograph->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removePhotograph(Photograph $photograph): self
+    {
+        if ($this->photographs->removeElement($photograph)) {
+            // set the owning side to null (unless already changed)
+            if ($photograph->getUser() === $this) {
+                $photograph->setUser(null);
+            }
+        }
 
         return $this;
     }

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CategoryRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,16 @@ class Category
      * @ORM\Column(type="string", length=255)
      */
     private $slug;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Photograph::class, mappedBy="Category")
+     */
+    private $photographs;
+
+    public function __construct()
+    {
+        $this->photographs = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -69,6 +81,33 @@ class Category
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Photograph[]
+     */
+    public function getPhotographs(): Collection
+    {
+        return $this->photographs;
+    }
+
+    public function addPhotograph(Photograph $photograph): self
+    {
+        if (!$this->photographs->contains($photograph)) {
+            $this->photographs[] = $photograph;
+            $photograph->addCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removePhotograph(Photograph $photograph): self
+    {
+        if ($this->photographs->removeElement($photograph)) {
+            $photograph->removeCategory($this);
+        }
 
         return $this;
     }
