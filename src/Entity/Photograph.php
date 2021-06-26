@@ -80,9 +80,15 @@ class Photograph
      */
     private $Category;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="photograph")
+     */
+    private $comments;
+
     public function __construct()
     {
         $this->Category = new ArrayCollection();
+        $this->comments = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -242,6 +248,36 @@ class Photograph
     public function removeCategory(Category $category): self
     {
         $this->Category->removeElement($category);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Comment[]
+     */
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(Comment $comment): self
+    {
+        if (!$this->comments->contains($comment)) {
+            $this->comments[] = $comment;
+            $comment->setPhotograph($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(Comment $comment): self
+    {
+        if ($this->comments->removeElement($comment)) {
+            // set the owning side to null (unless already changed)
+            if ($comment->getPhotograph() === $this) {
+                $comment->setPhotograph(null);
+            }
+        }
 
         return $this;
     }

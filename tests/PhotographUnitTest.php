@@ -17,17 +17,17 @@ class PhotographUnitTest extends TestCase
         $datetime = new \DateTime();
 
         $photograph->setUser($user)
-                    ->addCategory($category)
-                    ->setDescription("description")
-                    ->setSlug("slug")
-                    ->setName("name")
-                    ->setFile("file")
-                    ->setHeight(90)
-                    ->setWidth(60)
-                    ->setForSale(true)
-                    ->setPortfolio(true)
-                    ->setPrice(320.00)
-                    ->setWasTaken($datetime);
+            ->addCategory($category)
+            ->setDescription("description")
+            ->setSlug("slug")
+            ->setName("name")
+            ->setFile("file")
+            ->setHeight(90)
+            ->setWidth(60)
+            ->setForSale(true)
+            ->setPortfolio(true)
+            ->setPrice(320.00)
+            ->setWasTaken($datetime);
 
         $this->assertTrue($photograph->getUser() === $user);
         $this->assertContains($category, $photograph->getCategory());
