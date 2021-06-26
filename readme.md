@@ -22,3 +22,9 @@ symfony check:requirements
 docker-compose up -d
 symfony serve -d
 ````
+
+## Test
+
+````bash
+php bin/phpunit
+````
