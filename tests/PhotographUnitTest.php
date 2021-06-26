@@ -27,7 +27,8 @@ class PhotographUnitTest extends TestCase
             ->setForSale(true)
             ->setPortfolio(true)
             ->setPrice(320.00)
-            ->setWasTaken($datetime);
+            ->setWasTaken($datetime)
+            ->setDate($datetime);
 
         $this->assertTrue($photograph->getUser() === $user);
         $this->assertContains($category, $photograph->getCategory());
@@ -41,6 +42,7 @@ class PhotographUnitTest extends TestCase
         $this->assertTrue($photograph->getPortfolio() === true);
         $this->assertTrue($photograph->getPrice() == 320.00);
         $this->assertTrue($photograph->getWasTaken() === $datetime);
+        $this->assertTrue($photograph->getDate() === $datetime);
     }
 
     public function testIsFalse(): void
@@ -75,6 +77,7 @@ class PhotographUnitTest extends TestCase
         $this->assertFalse($photograph->getPortfolio() === false);
         $this->assertFalse($photograph->getPrice() == false);
         $this->assertFalse($photograph->getWasTaken() === new \DateTime());
+        $this->assertFalse($photograph->getDate() === new \DateTime());
     }
 
     public function testIsEmpty()
@@ -93,5 +96,6 @@ class PhotographUnitTest extends TestCase
         $this->assertEmpty($photograph->getPortfolio());
         $this->assertEmpty($photograph->getPrice());
         $this->assertEmpty($photograph->getWasTaken());
+        $this->assertEmpty($photograph->getDate());
     }
 }

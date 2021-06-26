@@ -85,6 +85,11 @@ class Photograph
      */
     private $comments;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $date;
+
     public function __construct()
     {
         $this->Category = new ArrayCollection();
@@ -278,6 +283,18 @@ class Photograph
                 $comment->setPhotograph(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(?\DateTimeInterface $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }
