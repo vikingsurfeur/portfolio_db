@@ -1,6 +1,6 @@
 # portfolio_db
 
-Creation of a website for the presentation of my photographic work.
+Creation of a website for the presentation of my photography work.
 Website developed using the Symfony framework.
 
 ## Env Requirements
@@ -21,4 +21,10 @@ symfony check:requirements
 ````bash
 docker-compose up -d
 symfony serve -d
+````
+
+## Test
+
+````bash
+php bin/phpunit
 ````
