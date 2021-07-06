@@ -9,6 +9,7 @@ Website developed using the Symfony framework.
     * Composer
     * Symfony CLI
     * Docker Desktop or Docker + Docker Compose
+    * NodeJS / NPM
 
 #### Check your requirements :
 
@@ -19,6 +20,9 @@ symfony check:requirements
 ### Start CMD Dev Producing
 
 ````bash
+composer install
+npm install
+npm run build
 docker-compose up -d
 symfony serve -d
 ````
