@@ -6,7 +6,7 @@
  */
 
 // any CSS you import will output into a single css file (app.scss in this case)
-import './styles/app.scss';
+import './scss/main.scss';
 
 // You can specify which plugins you need
 import './js/main';
