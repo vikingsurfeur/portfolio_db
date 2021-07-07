@@ -20,15 +20,7 @@
     "dependencies": {
         "@popperjs/core": "^2.9.2",
         "autoprefixer": "^10.2.6",
-        "bootstrap": "^5.0.0-beta3",
-        "counterup2": "^1.0.4",
-        "glightbox": "^3.0.9",
-        "imagesloaded": "^4.1.4",
-        "isotope-layout": "^3.0.6",
-        "jquery": "^3.6.0",
-        "jquery.counterup": "^2.1.0",
-        "postcss-loader": "^6.1.1",
-        "tiny-slider": "^2.9.3",
-        "wowjs": "^1.1.3"
+        "bootstrap": "^5.0.2",
+        "postcss-loader": "^6.1.1"
     }
 }
