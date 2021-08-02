@@ -25,3 +25,14 @@ linkDropdown.addEventListener("click", () => {
         arrowDropdown.style.transform = `rotate(${add180Degree(180)}deg)`;
     }
 });
+
+window.addEventListener("resize", () => {
+    let widthOutput = window.innerWidth;
+
+    if (widthOutput < 992) {
+        navbarDropdown.classList.remove("display__dropdown");
+        navbarDropdown.classList.remove("hide__dropdown");
+        navbarDropdown.classList.add("hide__base__dropdown");
+        arrowDropdown.style.transform = `rotate(${add180Degree(180)}deg)`;
+    }    
+});
