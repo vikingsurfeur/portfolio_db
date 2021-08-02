@@ -2,7 +2,6 @@
     .header {
 
         &__navbar {
-            font-size: $font-size-base;
 
             &__burger {
                 display: none;
@@ -11,7 +10,7 @@
             &__list--mobile {
                 display: none;
             }
-            
+
             &__list--desktop {
                 display: flex;
             }
