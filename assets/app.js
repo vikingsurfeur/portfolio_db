@@ -9,5 +9,5 @@
 import './scss/main.scss';
 
 // You can specify which plugins you need
-import './js/main';
+import './js/navBar';
 

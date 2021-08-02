@@ -1,0 +1,41 @@
+.header {
+    min-height: 8rem;
+    padding: 0 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__logo {
+        width: 4rem;
+    }
+    &__navbar {
+        
+        &__burger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 3rem;
+            height: 2rem;
+
+            &__line {
+                width: 100%;
+                height: 0.2rem;
+                background-color: $color-text-white;
+            }
+        }
+
+        &__list {
+            display: none;
+        }
+
+        &__link--dropdown {
+            display: flex;
+            align-items: center;
+
+            &--arrow {
+                width: $font-size-fine;
+                margin-left: 1rem;
+            }
+        }
+    }
+}
