@@ -31,3 +31,31 @@
         visibility: hidden;
     }
 }
+
+// ANIMATION BURGER MENU
+
+.display__mobile__menu {
+    animation: displayMobileMenu 250ms 1 ease forwards;
+}
+
+@keyframes displayMobileMenu {
+    0% {
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.hide__mobile__menu {
+    animation: hideMobileMenu 250ms 1 ease forwards;
+}
+
+@keyframes hideMobileMenu {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, -100%, 0);
+    }
+}

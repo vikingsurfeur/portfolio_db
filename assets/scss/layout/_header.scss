@@ -8,7 +8,11 @@
                 display: none;
             }
 
-            &__list {
+            &__list--mobile {
+                display: none;
+            }
+            
+            &__list--desktop {
                 display: flex;
             }
 

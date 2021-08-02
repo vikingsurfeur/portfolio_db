@@ -1,6 +1,7 @@
 .header {
     min-height: 8rem;
     padding: 0 4rem;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -11,11 +12,11 @@
     &__navbar {
         
         &__burger {
+            width: 3rem;
+            height: 2rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            width: 3rem;
-            height: 2rem;
 
             &__line {
                 width: 100%;
@@ -24,8 +25,51 @@
             }
         }
 
-        &__list {
+        &__closer {
+            width: 3rem;
+            height: 2rem;
+            position: absolute;
+            top: 3rem;
+            right: 4rem;
+            
+            &__line {
+                width: 100%;
+                height: 0.2rem;
+                position: absolute;
+                top: 0.895rem;
+                left: 0;
+                transform-origin: center;
+                background-color: $color-text-white;
+            }
+
+            &__line:first-child {
+                transform: rotate(45deg);
+            }
+
+            &__line:last-child {
+                transform: rotate(-45deg);
+            }
+        }
+
+        &__item,
+        &__item--dropdown {
+            margin: 4rem 0;
+        }
+
+        &__list--desktop {
             display: none;
+        }
+
+        &__list--mobile {
+            min-width: 100vw;
+            min-height: 100vh;
+            position: fixed;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translate3d(0, -100%, 0);
         }
 
         &__link--dropdown {
