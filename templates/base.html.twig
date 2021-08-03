@@ -13,7 +13,6 @@
     {% endblock %}
 </head>
 <body {% if app.request.get('_route') == 'home' %}class="body__home"{% endif %}>
-    {% include "./base/header.html.twig" %}
     {% block body %}
     {% endblock %}
     {% block javascripts %}

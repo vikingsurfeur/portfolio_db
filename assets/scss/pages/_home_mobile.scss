@@ -6,3 +6,28 @@
     background-size: cover;
     background-attachment: fixed;
 }
+
+.section__home {
+    height: calc(100vh - 20rem);
+    padding: 0 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__title {
+        font-size: $font-size-title;
+    }
+
+    &__btn__group {
+        margin-top: $spacer-large-top;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__btn {
+        padding: 1rem 3rem;
+        font-size: $font-size-base;
+        border: 1px solid $color-text-white;
+        border-radius: $border-radius;
+    }
+}

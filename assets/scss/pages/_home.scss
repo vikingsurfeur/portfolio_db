@@ -1,3 +1,17 @@
 @include for-size(md) {
+    .section__home {
+        padding: 0 8rem;
 
+        &__title {
+            font-size: $font-size-bigtitle;
+        }
+
+        &__btn__group {
+            flex-direction: row;
+        }
+        
+        &__btn {
+            padding: 1.5rem 4rem;
+        }
+    }
 }

@@ -1,0 +1,25 @@
+.footer {
+    height: 10rem;
+    padding: 0 4rem;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    align-items: center;
+
+    &__copyright {
+        font-size: $font-size-base;
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+
+        &__item:not(:first-child) {
+            margin-left: 4rem;
+        }
+
+        &__icon {
+            width: 2.5rem;
+        }
+    }
+}

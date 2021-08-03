@@ -1,0 +1,25 @@
+@include for-size(md) {
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+
+        &__social {
+
+            &__icon:hover {
+                animation: scale 500ms ease 1;
+            }
+
+            @keyframes scale {
+                0% {
+                    transform: scale3d(1, 1, 1);
+                }
+                50% {
+                    transform: scale3d(0.8, 0.8, 0.8);
+                }
+                100% {
+                    transform: scale3d(1, 1, 1);
+                }
+            }
+        }
+    }
+}
