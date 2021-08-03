@@ -1,10 +1,10 @@
-// ANIMATION DISPLAY DROPDOWN
+// ANIMATION DISPLAY OPACITY/VISIBILITY
 
-.display__dropdown {
-    animation: displayingDropdown 250ms 1 ease forwards;
+.display__visible {
+    animation: displayVisible 250ms 1 ease forwards;
 }
 
-@keyframes displayingDropdown {
+@keyframes displayVisible {
     0% {
         opacity: 0;
     }
@@ -14,15 +14,15 @@
     }
 }
 
-.hide__base__dropdown {
+.hide__base {
     visibility: hidden;
 }
 
-.hide__dropdown {
-    animation: hidingDropdown 250ms 1 ease forwards;
+.hide__visible {
+    animation: hideVisible 250ms 1 ease forwards;
 }
 
-@keyframes hidingDropdown {
+@keyframes hideVisible {
     0% {
         opacity: 1;
     }
@@ -32,13 +32,13 @@
     }
 }
 
-// ANIMATION BURGER MENU
+// ANIMATION DISPLAY TRANSFORM Y
 
-.display__mobile__menu {
-    animation: displayMobileMenu 250ms 1 ease forwards;
+.display__transformY {
+    animation: displayTransformY 250ms 1 ease forwards;
 }
 
-@keyframes displayMobileMenu {
+@keyframes displayTransformY {
     0% {
         transform: translate3d(0, -100%, 0);
     }
@@ -47,11 +47,11 @@
     }
 }
 
-.hide__mobile__menu {
-    animation: hideMobileMenu 250ms 1 ease forwards;
+.hide__transformY {
+    animation: hideTransformY 250ms 1 ease forwards;
 }
 
-@keyframes hideMobileMenu {
+@keyframes hideTransformY {
     0% {
         transform: translate3d(0, 0, 0);
     }
