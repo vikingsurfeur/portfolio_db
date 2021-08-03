@@ -76,15 +76,5 @@
             backdrop-filter: saturate(180%) blur(10px);
             transform: translate3d(0, -100%, 0);
         }
-
-        &__link--dropdown {
-            display: flex;
-            align-items: center;
-
-            &--arrow {
-                width: $font-size-fine;
-                margin-left: 1rem;
-            }
-        }
     }
 }
