@@ -1,16 +1,19 @@
 .footer {
-    height: 10rem;
+    min-height: 14rem;
     padding: 0 4rem;
     display: flex;
     flex-direction: column-reverse;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 
-    &__copyright {
+    &__copyright {        
+        margin: $spacer-medium 0 $spacer-small 0;
         font-size: $font-size-base;
+        text-align: center;
     }
 
     &__social {
+
         display: flex;
         align-items: center;
 

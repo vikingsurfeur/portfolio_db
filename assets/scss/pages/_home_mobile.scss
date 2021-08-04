@@ -8,26 +8,32 @@
 }
 
 .section__home {
-    height: calc(100vh - 20rem);
+    height: calc(100vh - 24rem);
     padding: 0 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
 
     &__title {
         font-size: $font-size-title;
     }
 
     &__btn__group {
-        margin-top: $spacer-large-top;
+        margin-top: $spacer-large;
         display: flex;
         flex-direction: column;
     }
 
     &__btn {
+        display: inline-block;
         padding: 1rem 3rem;
         font-size: $font-size-base;
         border: 1px solid $color-text-white;
         border-radius: $border-radius;
+    }
+
+    &__btn:last-child {
+        margin-top: $spacer-small;
     }
 }

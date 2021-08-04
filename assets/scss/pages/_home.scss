@@ -1,17 +1,22 @@
 @include for-size(md) {
     .section__home {
+        height: calc(100vh - 20rem);
         padding: 0 8rem;
 
-        &__title {
-            font-size: $font-size-bigtitle;
+        &__btn:hover {
+            animation: scale 500ms ease 1;
         }
 
-        &__btn__group {
-            flex-direction: row;
-        }
-        
-        &__btn {
-            padding: 1.5rem 4rem;
+        @keyframes scale {
+            0% {
+                transform: scale3d(1, 1, 1);
+            }
+            50% {
+                transform: scale3d(0.95, 0.95, 0.95);
+            }
+            100% {
+                transform: scale3d(1, 1, 1);
+            }
         }
     }
 }

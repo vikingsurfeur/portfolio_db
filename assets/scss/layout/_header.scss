@@ -1,5 +1,6 @@
-@include for-size(md) {
+@include for-size(lg) {
     .header {
+        font-size: $font-size-base;
 
         &__navbar {
 
@@ -15,8 +16,7 @@
                 display: flex;
             }
 
-            &__link,
-            &__link--dropdown {
+            &__link {
                 position: relative;
             }
 
@@ -26,12 +26,16 @@
                 width: 100%;
                 height: 0.1rem;
                 position: absolute;
-                top: 2.25rem;
+                top: 2.30rem;
                 left: 0;
                 background-color: $color-text-white;
                 transform-origin: left;
                 transform: scale3d(0, 0, 0);
                 transition: transform $transition;
+            }
+
+            &__link--dropdown::after {
+                top: 2rem;
             }
 
             &__link:hover::after,
@@ -50,7 +54,6 @@
 
             &__link--dropdown {
                 display: flex;
-                align-items: center;
     
                 &--arrow {
                     width: $font-size-fine;

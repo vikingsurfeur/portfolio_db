@@ -1,5 +1,6 @@
 @include for-size(md) {
     .footer {
+        min-height: 10rem;
         flex-direction: row;
         justify-content: space-between;
 
