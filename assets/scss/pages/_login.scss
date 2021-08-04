@@ -1,0 +1,18 @@
+@include for-size(md) {
+    .body__login {
+        display: block;
+
+        &__trapeze {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            clip-path: polygon(0 0, 60% 0, 40% 100%, 0% 100%);
+            background-color: red;
+        }
+
+        &__form {
+            max-width: 25vw;
+            margin-left: 10%;
+        }   
+    }
+}

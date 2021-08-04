@@ -2,21 +2,5 @@
     .section__home {
         height: calc(100vh - 20rem);
         padding: 0 8rem;
-
-        &__btn:hover {
-            animation: scale 500ms ease 1;
-        }
-
-        @keyframes scale {
-            0% {
-                transform: scale3d(1, 1, 1);
-            }
-            50% {
-                transform: scale3d(0.95, 0.95, 0.95);
-            }
-            100% {
-                transform: scale3d(1, 1, 1);
-            }
-        }
     }
 }

@@ -15,7 +15,11 @@
 
 // USE COMPONENTS
 
-@import 'components/buttons';
+@import 'components/input_mobile',
+'components/input',
+'components/buttons_mobile',
+'components/buttons_tablet',
+'components/buttons';
 
 // USE LAYOUTS
 
@@ -31,7 +35,9 @@
 
 @import 'pages/home_mobile',
 'pages/home_tablet',
-'pages/home';
+'pages/home',
+'pages/login_mobile',
+'pages/login';
 
 // USE THEMES
 

@@ -10,11 +10,7 @@
             margin-top: $spacer-xlarge;
         }
 
-        &__btn {
-            padding: 1.5rem 4rem;
-        }
-
-        &__btn:last-child {
+        .btn:last-child {
             margin-left: $spacer-medium;
             margin-top: 0;
         }
