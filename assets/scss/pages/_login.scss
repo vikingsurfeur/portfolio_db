@@ -1,0 +1,22 @@
+@include for-size(md) {
+    .body__login {
+        display: block;
+        background-image: url('../../../public/img/david_bouscarle_portfolio_1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &__trapeze {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            clip-path: polygon(0 0, 60% 0, 40% 100%, 0% 100%);
+            background-color: $color-text-white;
+        }
+
+        &__form {
+            max-width: 25vw;
+            margin-left: 10%;
+        }   
+    }
+}

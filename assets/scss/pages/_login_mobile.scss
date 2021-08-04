@@ -1,0 +1,29 @@
+.body__login {
+    min-height: 100vh;
+    @extend %flex--row--center;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        &__error {
+            margin-bottom: $spacer-small;
+            color: $color-text-error;
+            font-size: $font-size-base;
+        }
+
+        &__title {
+            text-align: center;
+            font-size: $font-size-title;
+        }
+
+        &__label {
+            margin: $spacer-medium 0 $spacer-small 0;
+            font-size: $font-size-fine;
+        }
+
+        .btn {
+            margin-top: $spacer-medium;
+        }
+    }
+}

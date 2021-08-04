@@ -1,0 +1,74 @@
+@include for-size(lg) {
+    .header {
+        font-size: $font-size-base;
+
+        &__navbar {
+
+            &__burger {
+                display: none;
+            }
+
+            &__list--mobile {
+                display: none;
+            }
+
+            &__list--desktop {
+                display: flex;
+            }
+
+            &__link {
+                position: relative;
+            }
+
+            &__link::after,
+            &__link--dropdown::after {
+                content: '';
+                width: 100%;
+                height: 0.1rem;
+                position: absolute;
+                top: 2.30rem;
+                left: 0;
+                background-color: $color-text-white;
+                transform-origin: left;
+                transform: scale3d(0, 0, 0);
+                transition: transform $transition;
+            }
+
+            &__link--dropdown::after {
+                top: 2rem;
+            }
+
+            &__link:hover::after,
+            &__link--dropdown:hover::after {
+                transform: scale3d(1, 1, 1);
+            }
+
+            &__item:not(:first-child) {
+                margin-left: 4rem;
+            }
+
+            &__item--dropdown {
+                margin-left: 4rem;
+                position: relative;
+            }
+
+            &__link--dropdown {
+                display: flex;
+    
+                &--arrow {
+                    width: $font-size-fine;
+                    margin-left: 1rem;
+                }
+            }
+
+            &__dropdown {
+                position: absolute;
+                top: 3.5rem;
+
+                &__list:not(:first-child) {
+                    margin-top: 2rem;
+                }
+            }
+        }
+    }
+}

@@ -15,19 +15,29 @@
 
 // USE COMPONENTS
 
-@import 'components/buttons';
+@import 'components/input_mobile',
+'components/input',
+'components/buttons_mobile',
+'components/buttons_tablet',
+'components/buttons';
 
 // USE LAYOUTS
 
-@import 'layout/header',
+@import 'layout/header_mobile',
+'layout/header_tablet',
+'layout/header',
 'layout/grid',
 'layout/forms',
+'layout/footer_mobile',
 'layout/footer';
 
 // USE PAGES
 
 @import 'pages/home_mobile',
-'pages/home';
+'pages/home_tablet',
+'pages/home',
+'pages/login_mobile',
+'pages/login';
 
 // USE THEMES
 

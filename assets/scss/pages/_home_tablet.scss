@@ -1,0 +1,18 @@
+@include for-size(sm) {
+    .section__home {
+
+        &__title {
+            font-size: $font-size-bigtitle;
+        }
+
+        &__btn__group {
+            flex-direction: row;
+            margin-top: $spacer-xlarge;
+        }
+
+        .btn:last-child {
+            margin-left: $spacer-medium;
+            margin-top: 0;
+        }
+    }
+}
