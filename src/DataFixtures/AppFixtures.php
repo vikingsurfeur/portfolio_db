@@ -3,18 +3,19 @@
 namespace App\DataFixtures;
 
 use App\Entity\User;
+use App\Entity\Blogpost;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
-use Symfony\Component\PasswordHasher\PasswordHasherInterface;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixtures extends Fixture
 {
-    private $encoder;
+    private $passwordHasher;
     
-    public function __construct(PasswordHasherInterface $encoder)
+    public function __construct(UserPasswordHasherInterface $passwordHasher)
     {
-        $this->hash = $encoder;
+        $this->passwordHasher = $passwordHasher;
     }
 
     public function load(ObjectManager $manager)
@@ -34,9 +35,23 @@ class AppFixtures extends Fixture
              ->setInstagram('instagram');
 
         // Hashage du mot de passe
-        $user->setPassword($this->hash->encodePassword($user, 'password'));
+        $user->setPassword($this->passwordHasher->hashPassword($user, 'the_new_password'));
 
         $manager->persist($user);
+
+        // Création de 10 Blogposts
+        for ($i = 0; $i < 10; $i++) {
+            $blogpost = new Blogpost();
+
+            $blogpost->setTitle($faker->sentence(3))
+                     ->setContent($faker->text(350))
+                     ->setSlug($faker->slug(3))
+                     ->setDate($faker->dateTimeBetween('-1 years', 'now'))
+                     ->setUser($user);
+            
+            $manager->persist($blogpost);
+        }
+
         $manager->flush();
     }
 }
