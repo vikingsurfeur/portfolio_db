@@ -1,0 +1,29 @@
+.footer__page {
+    min-height: 14rem;
+    padding: 0 4rem;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+
+    &__copyright {        
+        margin: $spacer-medium 0 $spacer-small 0;
+        font-size: $font-size-base;
+        text-align: center;
+    }
+
+    &__social {
+
+        display: flex;
+        align-items: center;
+
+        &__item:not(:first-child) {
+            margin-left: 4rem;
+        }
+
+        &__icon {
+            width: 2.5rem;
+            filter: invert(1);
+        }
+    }
+}

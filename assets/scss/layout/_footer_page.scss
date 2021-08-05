@@ -1,8 +1,9 @@
 @include for-size(md) {
-    .footer {
+    .footer__page {
         min-height: 10rem;
         flex-direction: row;
         justify-content: space-between;
+        box-shadow: $box-shadow-top;
 
         &__copyright {        
             margin: 0;

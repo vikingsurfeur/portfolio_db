@@ -1,0 +1,56 @@
+{# Set the right class with app.request.get #}
+{% if app.request.get('_route') == 'home'%}
+    {% set class = "header" %}
+{% else %}
+    {% set class = "header__page" %}
+{% endif %}
+
+<header class="{{ class }}">
+    <a href="/">
+        <img 
+            class="{{ class }}__logo"
+            {% if class == "header" %} 
+                src="./img/david_bouscarle_logo_white.svg"
+            {% else %}
+                src="./img/david_bouscarle_logo_black.svg"
+            {% endif %} 
+            alt="Logo David Bouscarle" />
+    </a>
+    <nav class="{{ class }}__navbar">
+        <button id="burgerNav" class="{{ class }}__navbar__burger">
+            <span class="{{ class }}__navbar__burger__line"></span>
+            <span class="{{ class }}__navbar__burger__line"></span>
+            <span class="{{ class }}__navbar__burger__line"></span>
+        </button>
+        <ul class="{{ class }}__navbar__list--desktop">
+            <li class="{{ class }}__navbar__item"><a class="{{ class }}__navbar__link" href="/">Home</a></li>
+            <li class="{{ class }}__navbar__item"><a class="{{ class }}__navbar__link" href="/last-work">Last Work</a></li>
+            <li class="{{ class }}__navbar__item--dropdown">
+                <a id="linkDropdown" class="{{ class }}__navbar__link--dropdown" href="#">
+                    <span>Portfolio</span>
+                    <img id="arrowDropdown" class="{{ class }}__navbar__link--dropdown--arrow" src="./img/arrow_down.svg" alt="arrow down" />
+                </a>
+                <ul id="navbarDropdown" class="{{ class }}__navbar__dropdown hide__base">
+                    <li class="{{ class }}__navbar__dropdown__list"><a class="{{ class }}__navbar__dropdown__link" href="#">Serie 1</a></li>
+                    <li class="{{ class }}__navbar__dropdown__list"><a class="{{ class }}__navbar__dropdown__link" href="#">Serie 2</a></li>
+                    <li class="{{ class }}__navbar__dropdown__list"><a class="{{ class }}__navbar__dropdown__link" href="#">Serie 3</a></li>
+                </ul>
+            </li>
+            <li class="{{ class }}__navbar__item"><a class="{{ class }}__navbar__link" href="#">News</a></li>
+            <li class="{{ class }}__navbar__item"><a class="{{ class }}__navbar__link" href="#">About</a></li>
+            <li class="{{ class }}__navbar__item"><a class="{{ class }}__navbar__link" href="#">Contact</a></li>
+        </ul>
+        <ul id="mobileMenu" class="{{ class }}__navbar__list--mobile">
+            <button id="closerNav" class="{{ class }}__navbar__closer">
+                <span class="{{ class }}__navbar__closer__line"></span>
+                <span class="{{ class }}__navbar__closer__line"></span>
+            </button>
+            <li class="{{ class }}__navbar__item"><a class="{{ class }}__navbar__link" href="/">Home</a></li>
+            <li class="{{ class }}__navbar__item"><a class="{{ class }}__navbar__link" href="/last-work">Last Work</a></li>
+            <li class="{{ class }}__navbar__item"><a class="{{ class }}__navbar__link" href="#">Portfolio</a></li>
+            <li class="{{ class }}__navbar__item"><a class="{{ class }}__navbar__link" href="#">News</a></li>
+            <li class="{{ class }}__navbar__item"><a class="{{ class }}__navbar__link" href="#">About</a></li>
+            <li class="{{ class }}__navbar__item"><a class="{{ class }}__navbar__link" href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>

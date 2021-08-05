@@ -1,0 +1,32 @@
+{# Set the right class with app.request.get #}
+{% if app.request.get('_route') == 'home'%}
+    {% set class = "footer" %}
+{% else %}
+    {% set class = "footer__page" %}
+{% endif %}
+
+<footer class="{{ class }}">
+    <p class="{{ class }}__copyright">&copy; <span id="yearCopyright"></span> - David Bouscarle Photography</p>
+    <ul class="{{ class }}__social">
+        <li class="{{ class }}__social__item">
+            <a class="{{ class }}__social__link" href="https://www.behance.net/davidbouscarle" target="_blank">
+                <img class="{{ class }}__social__icon" src="./img/david_bouscarle_behance.svg" alt="Behance David Bouscarle" />
+            </a>
+        </li>
+        <li class="{{ class }}__social__item">
+            <a class="{{ class }}__social__link" href="https://www.instagram.com/davidbouscarle" target="_blank">
+                <img class="{{ class }}__social__icon" src="./img/david_bouscarle_instagram.svg" alt="Instagram David Bouscarle" />
+            </a>
+        </li>
+        <li class="{{ class }}__social__item">
+            <a class="{{ class }}__social__link" href="https://www.facebook.com/david.bouscarle" target="_blank">
+                <img class="{{ class }}__social__icon" src="./img/david_bouscarle_facebook.svg" alt="Facebook David Bouscarle" />
+            </a>
+        </li>
+        <li class="{{ class }}__social__item">
+            <a class="{{ class }}__social__link" href="https://www.linkedin.com/in/davidbouscarle" target="_blank">
+                <img class="{{ class }}__social__icon" src="./img/david_bouscarle_linkedin.svg" alt="Linkedin David Bouscarle" />
+            </a>
+        </li>
+    </ul>
+</footer>
