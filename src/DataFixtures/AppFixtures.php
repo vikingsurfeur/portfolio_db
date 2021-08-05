@@ -4,6 +4,8 @@ namespace App\DataFixtures;
 
 use App\Entity\User;
 use App\Entity\Blogpost;
+use App\Entity\Category;
+use App\Entity\Photograph;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
@@ -50,6 +52,37 @@ class AppFixtures extends Fixture
                      ->setUser($user);
             
             $manager->persist($blogpost);
+        }
+
+        // Création de 5 catégories
+        for ($i = 0; $i < 5; $i++) {
+            $category = new Category();
+
+            $category->setName($faker->sentence(3))
+                     ->setSlug($faker->slug(3))
+                     ->setDescription($faker->text(350));
+            
+            $manager->persist($category);
+
+            // Création de 2 Photographies
+            for ($i = 0; $i < 2; $i++) {
+                $photograph = new Photograph();
+
+                $photograph->setName($faker->sentence(3))
+                        ->setSlug($faker->slug(3))
+                        ->setDescription($faker->text(350))
+                        ->setWidth(rand(100, 1000))
+                        ->setHeight(rand(100, 1000))
+                        ->setForSale($faker->randomElement([true, false]))
+                        ->setPrice(rand(0, 1000))
+                        ->setWasTaken($faker->dateTimeBetween('-1 years', 'now'))
+                        ->setPortfolio($faker->randomElement([true, false]))
+                        ->setFile('./img/placeholder.jpg')
+                        ->addCategory($category)
+                        ->setUser($user);
+
+                $manager->persist($photograph);
+            }
         }
 
         $manager->flush();
