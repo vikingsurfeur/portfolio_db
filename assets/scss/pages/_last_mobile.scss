@@ -1,0 +1,33 @@
+.body__last__work {
+
+    &__section {
+        margin: $spacer-large 0;
+
+        &__title {
+            margin-bottom: $spacer-large;
+            text-align: center;
+            font-size: $font-size-title;
+        }
+
+        &__card {
+            max-width: 75vw;
+            margin: 0 auto;
+
+            &__title {
+                margin-bottom: $spacer-medium;
+                font-size: $font-size-subtitle;
+            }
+
+            &__title:not(first-child) {
+                margin-top: $spacer-medium;
+            }
+
+            &__photograph {
+                border-radius: $border-radius;
+                box-shadow: $box-shadow-bottom;
+            }
+
+            
+        }
+    }
+}

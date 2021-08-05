@@ -4,12 +4,18 @@
 
 {% block body %}
 
-    <section class="section__home">
-        <h1 class="section__home__title">David Bouscarle Photography</h1>
-        <div class="section__home__btn__group">
-            <a class="btn">Portfolio</a>
-            <a class="btn">Last Work</a>
-        </div>
+    <section class="body__last__work__section">
+        <h1 class="body__last__work__section__title">Last Work</h1>
+        {% for photograph in photographs %}
+            <div class="body__last__work__section__card">
+                <h2 class="body__last__work__section__card__title">{{ photograph.name }}</h2>
+                <img class="body__last__work__section__card__photograph" src="{{ photograph.file }}" alt="{{ photograph.name }}" />
+                <div class="body__last__work__section__card__description">
+                    <p>{{ photograph.description|u.truncate(100, '...', false) }}</p>
+                    <p>{{ photograph.getWasTaken|date('d/m/Y') }}</p>
+                </div>
+            </div>
+        {% endfor %}
     </section>
 
 {% endblock %}
