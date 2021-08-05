@@ -45,39 +45,40 @@ class AppFixtures extends Fixture
         for ($i = 0; $i < 10; $i++) {
             $blogpost = new Blogpost();
 
-            $blogpost->setTitle($faker->sentence(3))
-                     ->setContent($faker->text(350))
+            $blogpost->setTitle($faker->title())
+                     ->setContent($faker->text(150))
                      ->setSlug($faker->slug(3))
-                     ->setDate($faker->dateTimeBetween('-1 years', 'now'))
+                     ->setDate($faker->dateTimeBetween('-6 month', 'now'))
                      ->setUser($user);
             
             $manager->persist($blogpost);
         }
 
         // Création de 5 catégories
-        for ($i = 0; $i < 5; $i++) {
+        for ($k = 0; $k < 5; $k++) {
             $category = new Category();
 
-            $category->setName($faker->sentence(3))
+            $category->setName($faker->word())
                      ->setSlug($faker->slug(3))
-                     ->setDescription($faker->text(350));
+                     ->setDescription($faker->text(10));
             
             $manager->persist($category);
 
             // Création de 2 Photographies
-            for ($i = 0; $i < 2; $i++) {
+            for ($j = 0; $j < 2; $j++) {
                 $photograph = new Photograph();
 
-                $photograph->setName($faker->sentence(3))
-                        ->setSlug($faker->slug(3))
-                        ->setDescription($faker->text(350))
-                        ->setWidth(rand(100, 1000))
-                        ->setHeight(rand(100, 1000))
+                $photograph->setName($faker->title())
+                        ->setSlug($faker->slug())
+                        ->setDescription($faker->text())
+                        ->setWidth($faker->randomFloat(2, 20, 60))
+                        ->setHeight($faker->randomFloat(2, 20, 60))
                         ->setForSale($faker->randomElement([true, false]))
-                        ->setPrice(rand(0, 1000))
-                        ->setWasTaken($faker->dateTimeBetween('-1 years', 'now'))
+                        ->setPrice($faker->randomFloat(2, 60, 6000))
+                        ->setWasTaken($faker->dateTimeBetween('-6 month', 'now'))
+                        ->setDate($faker->dateTimeBetween('-6 month', 'now'))
                         ->setPortfolio($faker->randomElement([true, false]))
-                        ->setFile('./img/placeholder.jpg')
+                        ->setFile('/img/placeholder.jpg')
                         ->addCategory($category)
                         ->setUser($user);
 

@@ -19,6 +19,18 @@ class PhotographRepository extends ServiceEntityRepository
         parent::__construct($registry, Photograph::class);
     }
 
+    /**
+     * @return Photograph[]
+     */
+    public function lastThreeWork(): array
+    {
+        return $this->createQueryBuilder('p')
+            ->orderBy('p.id', 'DESC')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Photograph[] Returns an array of Photograph objects
     //  */
