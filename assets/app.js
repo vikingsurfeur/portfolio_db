@@ -11,4 +11,5 @@ import './scss/main.scss';
 // You can specify which plugins you need
 import './js/navBar';
 import './js/footer';
+import './js/lightbox';
 

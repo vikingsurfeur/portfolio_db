@@ -59,3 +59,32 @@
         transform: translate3d(0, -100%, 0);
     }
 }
+
+// ANIMATION LIGHTBOX
+
+.lightbox__visible {
+    animation: lightboxVisible 250ms 1 ease forwards;
+}
+
+@keyframes lightboxVisible {
+    0% {
+        background-color: inherit;
+    }
+    100% {
+        background-color: $color-subblack;
+    }
+}
+
+.lightbox__hidden {
+    animation: lightboxHidden 250ms 1 ease forwards;
+}
+
+@keyframes lightboxHidden {
+    0% {
+        background-color: $color-subblack;
+    }
+    100% {
+        background-color: inherit;
+    }
+}
+

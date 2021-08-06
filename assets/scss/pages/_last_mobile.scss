@@ -10,7 +10,7 @@
         }
 
         &__card {
-            max-width: 75vw;
+            max-width: 85vw;
             margin: 0 auto;
 
             &__title {
@@ -27,7 +27,11 @@
                 box-shadow: $box-shadow-bottom;
             }
 
-            
+            &__description,
+            &__date {
+                margin-top: $spacer-small;
+                font-size: $font-size-fine;
+            }
         }
     }
 }
