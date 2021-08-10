@@ -1,0 +1,19 @@
+@include for-size(md) {
+    .body__last__work {
+
+        &__section {
+
+            &__card {
+
+                &__description{
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                &__date {
+                    margin-top: 0; 
+                }
+            }
+        }
+    }
+}

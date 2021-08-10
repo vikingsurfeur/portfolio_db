@@ -1,0 +1,31 @@
+@include for-size(md) {
+    .footer__page {
+        min-height: 10rem;
+        flex-direction: row;
+        justify-content: space-between;
+        box-shadow: $box-shadow-top;
+
+        &__copyright {        
+            margin: 0;
+        }
+
+        &__social {
+
+            &__icon:hover {
+                animation: scale 500ms ease 1;
+            }
+
+            @keyframes scale {
+                0% {
+                    transform: scale3d(1, 1, 1);
+                }
+                50% {
+                    transform: scale3d(0.8, 0.8, 0.8);
+                }
+                100% {
+                    transform: scale3d(1, 1, 1);
+                }
+            }
+        }
+    }
+}

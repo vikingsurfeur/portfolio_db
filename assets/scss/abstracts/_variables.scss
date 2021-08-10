@@ -18,11 +18,17 @@ $font-size-bigtitle: 5rem;
 
 $color-text-white: rgba(255, 255, 255, 1);
 $color-text-black: rgba(0, 0, 0, 1);
+$color-subblack: rgba(12, 12, 12, 1);
 $color-text-error: rgb(180, 25, 25);
 
 // BORDER RADIUS
 
 $border-radius: 0.25rem;
+
+// BOX SHADOW
+
+$box-shadow-bottom: rgba($color-text-black, 0.1) 0px 4px 6px -1px, rgba($color-text-black, 0.05) 0px 2px 4px -1px;
+$box-shadow-top: rgba($color-text-black, 0.05) 0px 1px 0px, rgba($color-text-black, 0.1) 0px 0px 8px;;
 
 // TRANSITION
 

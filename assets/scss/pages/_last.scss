@@ -1,0 +1,19 @@
+@include for-size(lg) {
+    .body__last__work {
+
+        &__section {
+
+            &__card {
+                max-width: 55vw;
+
+                &__photograph {
+                    transition: transform $transition;
+                }
+
+                &__photograph:hover {
+                    cursor: url('../../../public/img/eye.png'), pointer;
+                }
+            }
+        }
+    }
+}

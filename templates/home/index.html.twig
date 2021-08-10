@@ -3,15 +3,13 @@
 {% block title %}David Bouscarle Photography{% endblock %}
 
 {% block body %}
-    {% include "./base/home/header.html.twig" %}
 
     <section class="section__home">
         <h1 class="section__home__title">David Bouscarle Photography</h1>
         <div class="section__home__btn__group">
-            <a class="btn">Portfolio</a>
-            <a class="btn">Last Work</a>
+            <a class="btn" href="/portfolio">Portfolio</a>
+            <a class="btn" href="/last-work">Last Work</a>
         </div>
     </section>
 
-    {% include "./base/home/footer.html.twig" %}
 {% endblock %}

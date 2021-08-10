@@ -1,5 +1,6 @@
 // HANDLE NAVBAR
 
+const headerPage = document.querySelector(".header__page");
 const linkDropdown = document.getElementById("linkDropdown");
 const navbarDropdown = document.getElementById("navbarDropdown");
 const arrowDropdown = document.getElementById("arrowDropdown");
@@ -57,5 +58,19 @@ window.addEventListener("resize", () => {
         mobileMenu.classList.remove("hide__transformY");
         burgerNav.classList.remove("display__visible");
         burgerNav.classList.remove("hide__visible");
+    }
+});
+
+// ANIMATION HEADER PAGE SCROLLED
+
+window.addEventListener("scroll", () => {
+    let headerHeight = headerPage.offsetHeight;
+    let scrollPos = window.scrollY;
+
+    if (scrollPos > headerHeight) {
+        headerPage.style.transition = "all 250ms ease";
+        headerPage.style.height = " 7rem";
+    } else {
+        headerPage.style.height = "10rem";
     }
 });

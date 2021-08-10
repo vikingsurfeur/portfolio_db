@@ -14,9 +14,21 @@
     {% endblock %}
 </head>
 
-<body {% if app.request.get('_route') == 'home' %}class="body__home"{% endif %}>
+<body
+    {# Set the right class with app.request.get #}
+    {% if app.request.get('_route') == 'home' %}
+        class="body__home"
+    {% elseif app.request.get('_route') == 'last_work' %}
+        class="body__last__work"
+    {% endif %}>
+
+    {% include "./base/header.html.twig" %}
+
     {% block body %}
     {% endblock %}
+
+    {% include "./base/footer.html.twig" %}
+
     {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
     {% endblock %}

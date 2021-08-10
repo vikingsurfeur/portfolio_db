@@ -26,16 +26,25 @@
 @import 'layout/header_mobile',
 'layout/header_tablet',
 'layout/header',
-'layout/grid',
-'layout/forms',
+'layout/header_page_mobile',
+'layout/header_page_tablet',
+'layout/header_page',
 'layout/footer_mobile',
-'layout/footer';
+'layout/footer',
+'layout/footer_page_mobile',
+'layout/footer_page',
+'layout/grid',
+'layout/forms';
 
 // USE PAGES
 
 @import 'pages/home_mobile',
 'pages/home_tablet',
 'pages/home',
+'pages/last_mobile',
+'pages/last_tablet',
+'pages/last',
+'pages/last_xl',
 'pages/login_mobile',
 'pages/login';
 
