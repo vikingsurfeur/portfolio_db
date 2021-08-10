@@ -1,7 +1,7 @@
 .body__last__work {
 
     &__section {
-        margin: $spacer-large 0;
+        margin: calc(#{$spacer-large} + 10rem) 0 $spacer-large 0;
 
         &__title {
             margin-bottom: $spacer-large;
@@ -10,7 +10,7 @@
         }
 
         &__card {
-            max-width: 85vw;
+            max-width: 75vw;
             margin: 0 auto;
 
             &__title {

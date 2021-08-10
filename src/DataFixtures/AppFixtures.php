@@ -78,7 +78,7 @@ class AppFixtures extends Fixture
                         ->setWasTaken($faker->dateTimeBetween('-6 month', 'now'))
                         ->setDate($faker->dateTimeBetween('-6 month', 'now'))
                         ->setPortfolio($faker->randomElement([true, false]))
-                        ->setFile('/img/david_bouscarle_portfolio.jpg')
+                        ->setFile('/img/david_bouscarle_portfolio_1.jpg')
                         ->addCategory($category)
                         ->setUser($user);
 

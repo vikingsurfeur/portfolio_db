@@ -1,4 +1,4 @@
-// HANDLE CLICK THE PHOTOGRAPH
+// HANDLE LIGHTBOX
 
 const photographLightbox = document.querySelectorAll("#photographLightbox");
 const body = document.querySelector("body");
@@ -21,18 +21,15 @@ window.addEventListener("resize", () => {
     const width = window.innerWidth;
     if (width < 1200) {
         photographLightbox.forEach((el) => {
-            el.removeEventListener("mouseover", handleLightbox);
-            el.removeEventListener("mouseout", handleLightbox);
+            el.removeEventListener("click", handleLightbox);
         });
     } else {
         photographLightbox.forEach((el) => {
-            el.addEventListener("mouseover", handleLightbox);
-            el.addEventListener("mouseout", handleLightbox);
+            el.addEventListener("click", handleLightbox);
         });
     }
 });
 
 photographLightbox.forEach((el) => {
-    el.addEventListener("mouseover", handleLightbox);
-    el.addEventListener("mouseout", handleLightbox);
+    el.addEventListener("click", handleLightbox);
 });

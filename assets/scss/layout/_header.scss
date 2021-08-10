@@ -1,3 +1,4 @@
+
 @include for-size(lg) {
     .header {
         font-size: $font-size-base;
@@ -57,6 +58,7 @@
 
             &__link--dropdown {
                 display: flex;
+                cursor: pointer;
     
                 &--arrow {
                     width: $font-size-fine;

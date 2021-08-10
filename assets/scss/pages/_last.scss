@@ -4,13 +4,13 @@
         &__section {
 
             &__card {
-                
+                max-width: 55vw;
+
                 &__photograph {
                     transition: transform $transition;
                 }
 
                 &__photograph:hover {
-                    transform: scale3d(1.1, 1.1, 1.1);
                     cursor: url('../../../public/img/eye.png'), pointer;
                 }
             }

@@ -9,7 +9,7 @@
         {% for photograph in photographs %}
             <div class="body__last__work__section__card">
                 <h2 class="body__last__work__section__card__title">{{ photograph.name }}</h2>
-                <img id="photographLightbox" class="body__last__work__section__card__photograph" src="{{ photograph.file }}" alt="{{ photograph.name }}" />
+                <img id="photographLightbox" class="body__last__work__section__card__photograph" title="Click to switch to the dark room" src="{{ photograph.file }}" alt="{{ photograph.name }}" />
                 <div class="body__last__work__section__card__description">
                     <p class="body__last__work__section__card__text">{{ photograph.description|u.truncate(100, '...', false) }}</p>
                     <p class="body__last__work__section__card__date">{{ photograph.getWasTaken|date('d/m/Y') }}</p>

@@ -57,7 +57,8 @@
 
             &__link--dropdown {
                 display: flex;
-    
+                cursor: pointer;
+
                 &--arrow {
                     width: $font-size-fine;
                     margin-left: 1rem;
@@ -69,8 +70,9 @@
                 position: absolute;
                 width: 10rem;
                 padding: 1.5rem;
-                top: 3rem;
-                background-color: $color-text-white;
+                top: 6rem;
+                background-color: rgba($color-text-white, 0.8);
+                backdrop-filter: saturate(180%) blur(10px);
                 border-radius: $border-radius;
                 box-shadow: $box-shadow-bottom;
 

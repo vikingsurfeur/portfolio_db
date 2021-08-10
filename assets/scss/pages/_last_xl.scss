@@ -1,0 +1,11 @@
+@include for-size(xl) {
+    .body__last__work {
+
+        &__section {
+
+            &__card {
+                max-width: 40vw;
+            }
+        }
+    }
+}
