@@ -27,7 +27,7 @@ docker-compose up -d
 symfony serve -d
 ````
 
-### Ajouter des données de test BDD
+### Add data test to database
 
 ````bash
 symfony console doctrine:fixture:load
